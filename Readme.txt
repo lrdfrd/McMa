@@ -52,4 +52,4 @@ PS: this assumes a default install of mcmyadmin using their directions. If you m
 But if you did make changes, then you should know how to make this work anyway.... right?  :)
 Enjoy.
 
-<a href='https://pledgie.com/campaigns/28676'><img alt='Click here to lend your support to: McMa Donations and make a donation at pledgie.com !' src='https://pledgie.com/campaigns/28676.png?skin_name=chrome' border='0' ></a>
+<a href='https://pledgie.com/campaigns/28676'><img alt='Click here to lend your support to: McMa Donations and make a donation at pledgie.com !' src='https://pledgie.com/campaigns/28676.png?skin_name=chrome' border='0' >fb5014@hotmail.com</a>
