@@ -1,6 +1,6 @@
 #!/bin/bash
 # /etc/init.d/mcma
-# version 0.4
+# version 0.5
  
 ### BEGIN INIT INFO
 # Provides: mcma
@@ -22,7 +22,7 @@
 #Dont edit above here
 USERNAME=minecraft
 MCPATH=/home/$USERNAME/McMyAdmin
-NAME=McMyAdmin
+NAME=McMa
 SERVICE=MCMA2_Linux_x86_64
 OPTIONS=""
 #Dont edit below here
@@ -92,14 +92,14 @@ echo "$NAME is not running."
 fi
 ;;
 *)
-echo "Usage: service mcmyadmin {start|stop|status|restart}"
+echo "Usage: service mcma {start|stop|status|restart}"
 exit 1
 ;;
 esac
 exit 0
 ############################
 # Copyright (c) 2014, Fred Barnes (aka:lrdfrd)
-# lrdfrd.org
+# fb5014@hotmail.com
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
