@@ -3,7 +3,8 @@ I have spent more time making it available to you.
 And more yet to explain how to properly use it.
 This code is free to use/modify/distribute.
 I do not provide warranty for this code. it is open and free. period.
-please support me & donate thanks.
+please support me & donate at https://pledgie.com/campaigns/28676
+thanks.
 
 Notice:
 This was created for and tested on Ubuntu 14.04 server 64bit with screen.
@@ -52,4 +53,3 @@ PS: this assumes a default install of mcmyadmin using their directions. If you m
 But if you did make changes, then you should know how to make this work anyway.... right?  :)
 Enjoy.
 
-<a href='https://pledgie.com/campaigns/28676'><img alt='Click here to lend your support to: McMa Donations and make a donation at pledgie.com !' src='https://pledgie.com/campaigns/28676.png?skin_name=chrome' border='0' >fb5014@hotmail.com</a>
