@@ -1,0 +1,128 @@
+#!/bin/bash
+# /etc/init.d/mcma
+# version 0.4
+ 
+### BEGIN INIT INFO
+# Provides: mcma
+# Required-Start: $remote_fs $syslog
+# Required-Stop: $remote_fs $syslog
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: McMyAdmin server
+# Description: Starts the McMyAdmin server
+### END INIT INFO
+ 
+#Settings
+#You should only have to edit the username 
+#I added the others just in case you wanted to
+#change something or add startup options such as -nostart.
+#NOTE: Under the OPTIONS heading, do not delete the ""
+#put the options in them like "-nostart -whatever  -else"
+ 
+#Dont edit above here
+USERNAME=minecraft
+MCPATH=/home/$USERNAME/McMyAdmin
+NAME=McMyAdmin
+SERVICE=MCMA2_Linux_x86_64
+OPTIONS=""
+#Dont edit below here
+ 
+ME=`whoami`
+as_user() {
+if [ $ME == $USERNAME ] ; then
+bash -c "$1"
+else
+su - $USERNAME -c "$1"
+fi
+}
+mc_start() {
+if pgrep -u $USERNAME -f $SERVICE > /dev/null
+then
+echo "$NAME is already running!"
+else
+echo "Starting $NAME 10 seconds..."
+cd $MCPATH
+as_user "cd $MCPATH && screen -dmS $NAME ./$SERVICE $OPTIONS"
+sleep 7
+if pgrep -u $USERNAME -f $SERVICE > /dev/null
+then
+echo "$NAME is now running."
+else
+echo "Error! Could not start $NAME !"
+fi
+fi
+}
+mc_stop() {
+if pgrep -u $USERNAME -f $SERVICE > /dev/null
+then
+echo "Stopping $NAME 25 seconds..."
+as_user "screen -p 0 -S $NAME -X eval 'stuff \"say SERVER SHUTTING DOWN IN 10 SECONDS. Saving map...\"\015'"
+sleep 10
+as_user "screen -p 0 -S $NAME -X eval 'stuff \"stop\"\015'"
+sleep 5
+as_user "screen -p 0 -s $NAME -X eval 'stuff \"/quit\"\015'"
+sleep 10
+else
+echo "$NAME was not running."
+fi
+if pgrep -u $USERNAME -f $SERVICE > /dev/null
+then
+echo "Error! $NAME could not be stopped."
+else
+echo "$NAME is stopped."
+fi
+}
+case "$1" in
+start)
+mc_start
+;;
+stop)
+mc_stop
+;;
+restart)
+mc_stop
+mc_start
+;;
+status)
+if pgrep -u $USERNAME -f $SERVICE > /dev/null
+then
+echo "$NAME is running."
+else
+echo "$NAME is not running."
+fi
+;;
+*)
+echo "Usage: service mcmyadmin {start|stop|status|restart}"
+exit 1
+;;
+esac
+exit 0
+############################
+# Copyright (c) 2014, Fred Barnes (aka:lrdfrd)
+# lrdfrd.org
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#
+# 1. Redistributions of source code must retain the above copyright notice, this
+# list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright notice,
+# this list of conditions and the following disclaimer in the documentation
+# and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+# DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+# ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+# (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+# LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+# ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+# SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# The views and conclusions contained in the software and documentation are those
+# of the authors and should not be interpreted as representing official policies,
+# either expressed or implied, of the FreeBSD Project.
+############################ 
