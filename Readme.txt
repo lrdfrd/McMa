@@ -1,16 +1,14 @@
-I have spent time on this.
-I have spent more time making it available to you.
-And more yet to explain how to properly use it.
 This code is free to use/modify/distribute.
 I do not provide warranty for this code. it is open and free. period.
-please support me & donate at https://pledgie.com/campaigns/28676
+please donate at https://pledgie.com/campaigns/28676
+
 thanks.
 
 Notice:
 This was created for and tested on Ubuntu 14.04 server 64bit with screen.
 Although it should work on most if not all newer Linux 64bit debain based distros with screen.
-If you don’t know what screen is… you probably shouldn’t be reading this. :)
-But if you don’t, just make sure you have it installed.
+If you donâ€™t know what screen isâ€¦ you probably shouldnâ€™t be reading this. :)
+But if you donâ€™t, just make sure you have it installed.
 Or install it with:
 
 sudo apt-get install screen
