@@ -1,6 +1,5 @@
 This code is free to use/modify/distribute.
-I do not provide warranty for this code. it is open and free. period.
-please donate at https://pledgie.com/campaigns/28676
+I do not provide warranty for this code. it is open and free. Period.
 
 thanks.
 
