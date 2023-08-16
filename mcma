@@ -17,7 +17,7 @@
 #I added the others just in case you wanted to
 #change something or add startup options such as -nostart.
 #NOTE: Under the OPTIONS heading, do not delete the ""
-#put the options in them like "-nostart -whatever  -else"
+#put the options in them like "-nostart -whatever -else"
  
 #Dont edit above here
 USERNAME=minecraft
