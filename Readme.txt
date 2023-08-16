@@ -10,18 +10,14 @@ If you don’t know what screen is… you probably shouldn’t be reading this. 
 But if you don’t, just make sure you have it installed.
 Or install it with:
 
-sudo apt-get install screen
+sudo apt install screen
  
 Or my favorite, Byobu which includes screen and is much better (in my opinion):
  
-sudo apt-get install byobu
+sudo apt install byobu
 
 Also, have McMyAdmin working before using this, this is for autorun and control of McMyAdmin from the command line and/or ssh.
  
- 
-How To Install (ubuntu 14.04)
-
-
 Use your favorite editor (I prefer nano) to create file called "mcma" in /etc/init.d/
 
 cd /etc/init.d
